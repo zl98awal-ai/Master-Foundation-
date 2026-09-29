@@ -26,10 +26,15 @@
         <div class="stats"><span><b>8</b> kelas</span><span>Bahasa Inggris I &amp; K3</span><span id="uis-today"></span></div>
       </div>
     </div>
+    <div class="tabs" role="tablist" aria-label="Tampilan">
+      <button type="button" role="tab" id="tab-dasbor" aria-selected="true" aria-controls="view-dasbor">Dasbor</button>
+      <button type="button" role="tab" id="tab-materi" aria-selected="false" aria-controls="view-materi">Panel Materi</button>
+    </div>
   </div>
 </header>
 
 <main class="wrap">
+<div id="view-dasbor" role="tabpanel" aria-labelledby="tab-dasbor">
   <section>
     <p class="eyebrow" id="today-label">Hari ini</p>
     <div class="today" id="today"></div>
@@ -67,6 +72,67 @@
       <p style="font-size:14px;color:var(--muted);margin:10px 0 0">File Drive terbuka dengan akun awaluddin2813@gmail.com.</p>
     </div>
   </section>
+</div>
+
+<div id="view-materi" role="tabpanel" aria-labelledby="tab-materi" hidden>
+  <section>
+    <h2>Panel Materi</h2>
+    <p class="lead">Simpan materi, tautan dan catatan mengajar per kampus, mata kuliah dan pertemuan. Hanya akun Bapak yang bisa membuka dan mengubahnya.</p>
+    <div id="panel-off" class="empty" hidden>Panel ini aktif saat dasbor dibuka di Claude dengan akun Bapak.</div>
+
+    <div id="panel-on" hidden>
+      <details class="card" id="add-box" open>
+        <summary style="cursor:pointer;font-weight:700;min-height:32px">Tambah materi</summary>
+        <form id="add-form" novalidate style="margin-top:14px">
+          <div class="form-grid">
+            <div class="field"><label for="f-campus">Kampus</label>
+              <select id="f-campus"><option value="uib">UIB · Universitas Internasional Batam</option><option value="uis">UIS · Universitas Ibnu Sina</option></select></div>
+            <div class="field"><label for="f-course">Mata kuliah</label><select id="f-course"></select></div>
+            <div class="field"><label for="f-meeting">Pertemuan</label><select id="f-meeting"></select></div>
+            <div class="field"><label for="f-cat">Kategori</label>
+              <select id="f-cat">
+                <option>Slide</option><option>Handout</option><option>Lesson plan</option><option>Kunci jawaban</option>
+                <option>Audio / video</option><option>Soal ujian</option><option>Tugas mahasiswa</option><option>Administrasi</option><option>Lainnya</option>
+              </select></div>
+            <div class="field wide"><label for="f-title">Judul</label><input id="f-title" type="text" maxlength="160" placeholder="Contoh: Meeting 4 Handout" autocomplete="off"></div>
+            <div class="wide">
+              <div class="seg" role="group" aria-label="Jenis materi" id="f-kind">
+                <button type="button" data-kind="file" aria-pressed="true">File</button>
+                <button type="button" data-kind="link" aria-pressed="false">Tautan</button>
+                <button type="button" data-kind="note" aria-pressed="false">Catatan</button>
+              </div>
+            </div>
+            <div class="wide" data-for="file">
+              <label class="drop" id="drop" for="f-file">
+                <input id="f-file" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.gif,.webp,.svg,.mp4,.webm,.csv,.md,.json,.txt">
+                <strong>Pilih file</strong> atau seret ke sini
+                <div class="hint" id="file-picked">PDF, gambar, video MP4/WebM, CSV, TXT, Markdown · maks. 20 MB per file</div>
+              </label>
+              <p class="hint">PowerPoint dan Word: ekspor dulu ke PDF, atau simpan di Google Drive lalu tambahkan sebagai <em>Tautan</em>.</p>
+            </div>
+            <div class="field wide" data-for="link" hidden><label for="f-url">Alamat tautan</label><input id="f-url" type="url" inputmode="url" placeholder="https://drive.google.com/..." autocomplete="off"></div>
+            <div class="field wide" data-for="note" hidden><label for="f-note">Catatan</label><textarea id="f-note" maxlength="5000" placeholder="Catatan mengajar, ide, pengingat…"></textarea></div>
+          </div>
+          <div class="form-actions">
+            <button class="btn" type="submit" id="f-save">Simpan</button>
+            <span class="meter" id="meter" hidden><span class="track"><span class="fill" id="meter-fill"></span></span><span id="meter-text"></span></span>
+          </div>
+          <div class="status" id="f-status" role="status" aria-live="polite"></div>
+        </form>
+      </details>
+
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="Filter kampus" id="filter-campus">
+          <button type="button" data-v="all" aria-pressed="true">Semua</button>
+          <button type="button" data-v="uib" aria-pressed="false">UIB</button>
+          <button type="button" data-v="uis" aria-pressed="false">UIS</button>
+        </div>
+        <div class="search"><input id="q" type="search" placeholder="Cari judul, kategori, catatan…" aria-label="Cari materi" autocomplete="off"></div>
+      </div>
+      <div id="list"><div class="empty">Memuat materi…</div></div>
+    </div>
+  </section>
+</div>
 </main>
 
 <footer class="site">
@@ -175,5 +241,6 @@
   }).join("");
 })();
 </script>
+<script src="assets/panel.js"></script>
 </body>
 </html>
