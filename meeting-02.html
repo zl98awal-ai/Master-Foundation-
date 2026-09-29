@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meeting 2 · Wh-Questions</title>
+<meta name="description" content="Meeting 2: Inquiring and giving direct personal information (TOEIC Part 2, Wh-questions).">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="crumb" href="index.html">‹ All meetings</a><br>
+    <span class="badge">Meeting 2 · TOEIC Part 2</span>
+    <h1>Inquiring &amp; Giving Direct Personal Information</h1>
+    <p>Ask and answer Wh-questions quickly and correctly.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Language focus: listen for the first word</h2>
+  <div class="card table-scroll">
+    <table class="focus">
+      <thead><tr><th>Question word</th><th>It asks about</th><th>A good answer</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Where</strong></td><td>a place</td><td>Right next to the copy room.</td></tr>
+        <tr><td><strong>Who</strong></td><td>a person</td><td>Marisa is handling it.</td></tr>
+        <tr><td><strong>When / What time</strong></td><td>a time</td><td>At 9:30 sharp.</td></tr>
+        <tr><td><strong>Why</strong></td><td>a reason</td><td>Because the manager is traveling.</td></tr>
+        <tr><td><strong>How</strong></td><td>a way, or a quality</td><td>You'll need a password from IT. / It went really well.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Part 2 traps</h2>
+  <div class="card">
+    <ul class="clean">
+      <li><strong>Wrong information category</strong>: a time for a Where question, a place for a Who question.</li>
+      <li><strong>Repeated word</strong>: the answer repeats a word from the question but does not answer it.</li>
+      <li><strong>Sound-alike</strong>: a word that sounds similar to a word in the question.</li>
+      <li><strong>Yes/No answer to a Wh-question</strong>: a Wh-question can never be answered with “yes” or “no”.</li>
+    </ul>
+  </div>
+
+  <h2>Practice: question–response</h2>
+  <p>Choose the best response. In <strong>Listening mode</strong>, press Play: you will hear the question and three answers, as in the real test.</p>
+  <div id="quiz"></div>
+
+  <nav class="pager">
+    <a href="meeting-01.html">‹ Meeting 1</a>
+    <a href="meeting-03.html">Meeting 3 ›</a>
+  </nav>
+</main>
+
+<footer class="site">
+  <div class="wrap">General &amp; Workplace English Foundation · Universitas Internasional Batam</div>
+</footer>
+
+<script>
+window.QUIZ = {
+  listen: true,
+  items: [
+    { q: "Where is the new intern sitting?", options: ["He started on Monday.", "Right next to the copy room.", "I'm not sure who she is."], answer: "B", why: "Where asks for a place. (A) gives a time, and (C) answers a Who question." },
+    { q: "Who's presenting the sales figures today?", options: ["Around 3 o'clock.", "At the conference room.", "Marisa is handling it."], answer: "C", why: "Who asks for a person. (A) is a time and (B) is a place." },
+    { q: "When does the training session begin?", options: ["In Room 204.", "At 9:30 sharp.", "Yes, I already registered."], answer: "B", why: "When asks for a time. (A) is a place, and (C) says “yes” to a Wh-question." },
+    { q: "Why was the meeting postponed?", options: ["Because the manager is traveling.", "It's postponed until Friday.", "No, it hasn't started yet."], answer: "A", why: "Why asks for a reason. (B) repeats “postponed” but gives a time, and (C) says “no” to a Wh-question." },
+    { q: "How do I access the shared drive?", options: ["It's shared with the whole team.", "You'll need a password from IT.", "The drive is almost full."], answer: "B", why: "How asks for a way. (A) and (C) repeat “shared” and “drive” but do not explain how." },
+    { q: "Who approved the new schedule?", options: ["The supervisor did.", "It starts next week.", "Yes, it's approved."], answer: "A", why: "Who asks for a person. (B) is a time, and (C) says “yes” to a Wh-question." },
+    { q: "Where can I find the office supplies?", options: ["They're in the cabinet by the printer.", "I ordered them yesterday.", "He's finding a new job."], answer: "A", why: "Where asks for a place. (C) uses “finding”, which sounds like “find”, but it is not an answer." },
+    { q: "When will the results be announced?", options: ["By the end of the week.", "In the main hall.", "They were very good."], answer: "A", why: "When asks for a time. (B) is a place, and (C) talks about how good the results were." },
+    { q: "Why is the elevator out of service?", options: ["It's on the fifth floor.", "It's being repaired.", "No, take the stairs instead."], answer: "B", why: "Why asks for a reason. (A) is a place, and (C) says “no” to a Wh-question." },
+    { q: "How was the client meeting?", options: ["It went really well.", "At 2 PM tomorrow.", "In Conference Room B."], answer: "A", why: "“How was…?” asks for an opinion or quality. (B) is a time and (C) is a place." },
+    { q: "Who's covering the front desk this afternoon?", options: ["This afternoon at 3.", "Daniel volunteered.", "At the front desk."], answer: "B", why: "Who asks for a person. (A) and (C) repeat words from the question but give a time and a place." },
+    { q: "Where should I submit the expense report?", options: ["Submit it to the finance office.", "The report was due yesterday.", "I already have one."], answer: "A", why: "Where asks for a place. (B) repeats “report” but gives a time." }
+  ]
+};
+</script>
+<script src="assets/quiz.js"></script>
+</body>
+</html>
