@@ -166,3 +166,52 @@ footer.site { border-top: 1px solid var(--line); padding-block: 22px 36px; font-
   .stage { grid-template-columns: 1fr; gap: 6px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* ---------- Campus-colored headers ---------- */
+:root { --uib-deep: #122c63; --uib-mid: #1d4396; --uis-deep: #0c4a2f; --uis-mid: #177a4b; }
+header.site.campus { position: relative; overflow: hidden; border-bottom: 0; padding-block: 44px 28px; }
+header.site.campus::before {
+  /* fine diagonal hatching for texture */
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: repeating-linear-gradient(135deg, rgba(255,255,255,.045) 0 1px, transparent 1px 14px);
+}
+header.site.campus::after {
+  /* fade into the black page */
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 56px; pointer-events: none;
+  background: linear-gradient(to bottom, transparent, var(--bg));
+}
+header.site.campus .wrap { position: relative; z-index: 1; }
+header.site.campus p, header.site.campus a { color: rgba(255,255,255,.78); }
+header.site.campus a:hover { color: #fff; }
+header.site.campus .badge { color: #f3dca4; border-color: rgba(243,220,164,.5); background: rgba(0,0,0,.18); }
+header.site.dual {
+  background:
+    radial-gradient(90% 120% at 0% 0%, var(--uib-mid), transparent 60%),
+    radial-gradient(90% 120% at 100% 0%, var(--uis-mid), transparent 60%),
+    linear-gradient(100deg, var(--uib-deep) 0%, #0e1f3f 45%, #0b2e20 55%, var(--uis-deep) 100%);
+}
+header.site.uib {
+  background:
+    radial-gradient(100% 140% at 0% 0%, var(--uib-mid), transparent 65%),
+    linear-gradient(160deg, var(--uib-deep), #0b1834 80%);
+}
+.campuses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 26px; }
+.campus-card {
+  position: relative; overflow: hidden; border-radius: 16px; padding: 16px 18px 18px;
+  border: 1px solid rgba(255,255,255,.14); background: rgba(0,0,0,.22);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); min-width: 0;
+}
+.campus-card .mark {
+  position: absolute; right: -6px; bottom: -22px; font-family: var(--display);
+  font-size: 88px; line-height: 1; color: rgba(255,255,255,.055); pointer-events: none; user-select: none;
+}
+.campus-card .code { font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+.campus-card.uib .code { color: #b9ccff; }
+.campus-card.uis .code { color: #a9e8c3; }
+.campus-card .name { font-weight: 600; color: #fff; line-height: 1.3; margin: 4px 0 10px; }
+.campus-card .stats { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: rgba(255,255,255,.75); }
+.campus-card .stats b { color: #fff; font-variant-numeric: tabular-nums; }
+.campus-card .bar { position: absolute; left: 0; top: 0; bottom: 0; width: 3px; }
+.campus-card.uib .bar { background: #7fa2ff; }
+.campus-card.uis .bar { background: #6fd39b; }
+@media (max-width: 520px) { .campuses { grid-template-columns: 1fr; } }

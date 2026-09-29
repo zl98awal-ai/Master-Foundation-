@@ -9,11 +9,23 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<header class="site">
+<header class="site campus dual">
   <div class="wrap">
     <span class="badge">Semester Ganjil 2026/2027</span>
     <h1>Dasbor Mengajar</h1>
     <p id="today-line">Awaluddin, S.Pd., M.Pd. · UIB &amp; UIS</p>
+    <div class="campuses">
+      <div class="campus-card uib"><span class="bar"></span><span class="mark" aria-hidden="true">UIB</span>
+        <div class="code">UIB</div>
+        <div class="name">Universitas Internasional Batam</div>
+        <div class="stats"><span><b>3</b> kelas</span><span>Bahasa Inggris I</span><span id="uib-today"></span></div>
+      </div>
+      <div class="campus-card uis"><span class="bar"></span><span class="mark" aria-hidden="true">UIS</span>
+        <div class="code">UIS</div>
+        <div class="name">Universitas Ibnu Sina</div>
+        <div class="stats"><span><b>8</b> kelas</span><span>Bahasa Inggris I &amp; K3</span><span id="uis-today"></span></div>
+      </div>
+    </div>
   </div>
 </header>
 
@@ -94,6 +106,11 @@
   var now = jakartaNow();
   document.getElementById("today-line").textContent =
     DAYS[now.day] + ", " + now.date + " " + MONTHS[now.month] + " " + now.year + " · UIB & UIS";
+
+  ["uib","uis"].forEach(function (k) {
+    var n = CLASSES.filter(function (c) { return c.day === now.day && c.campus === k; }).length;
+    document.getElementById(k + "-today").innerHTML = n ? "<b>" + n + "</b> hari ini" : "Libur hari ini";
+  });
 
   // Today / next class
   var todayBox = document.getElementById("today");
