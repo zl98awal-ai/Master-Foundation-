@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dasbor Mengajar Awaluddin</title>
 <meta name="description" content="Dasbor mengajar pribadi: jadwal kelas UIB dan UIS, materi General & Workplace English Foundation.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Manrope:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
 
   <section>
     <h2>Jadwal mingguan</h2>
-    <p class="sub" style="margin-top:-6px;color:var(--muted);font-size:15px">
+    <p class="lead">
       <span class="tag uib">UIB</span>Bahasa Inggris I · 3 kelas &nbsp;
       <span class="tag uis">UIS</span>Bahasa Inggris I &amp; K3 · 8 kelas · UTS = Pertemuan 8, UAS 12–15 Jan 2027
     </p>
@@ -33,7 +34,7 @@
 
   <section>
     <h2>General &amp; Workplace English Foundation <span class="tag uib">UIB</span></h2>
-    <p style="margin-top:-6px;color:var(--muted);font-size:15px">GBA 90 menit: BKOF 15′ · MOT 30′ · JCA 35′ · ICA 10′. Pertemuan 1–3 punya panduan lengkap.</p>
+    <p class="lead">GBA 90 menit: BKOF 15′ · MOT 30′ · JCA 35′ · ICA 10′. Pertemuan 1–3 punya panduan lengkap.</p>
     <ul class="syllabus" id="syllabus"></ul>
   </section>
 
@@ -103,7 +104,7 @@
     todayBox.innerHTML = todays.map(function (c) {
       var live = now.minutes >= mins(c.start) && now.minutes < mins(c.end);
       var done = now.minutes >= mins(c.end);
-      return '<div class="slot' + (live ? " now" : "") + '" style="' + (done ? "opacity:.6" : "") + '">' +
+      return '<div class="slot' + (live ? " now" : "") + '"' + (done ? ' style="opacity:.5"' : "") + '>' +
         '<div class="time">' + c.start + "–" + c.end + (live ? '<div class="sub">Sedang berlangsung</div>' : done ? '<div class="sub">Selesai</div>' : "") + "</div>" +
         '<div><div class="cls">' + tag(c) + esc(c.code) + " · " + esc(c.course) + "</div>" +
         '<div class="sub">Ruang ' + esc(c.room) + (c.note ? " · " + esc(c.note) : "") + "</div></div></div>";
