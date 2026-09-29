@@ -1,52 +1,161 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Workplace English Foundation</title>
-<meta name="description" content="General & Workplace English Foundation (A2 → B1), Universitas Internasional Batam. Meeting materials and TOEIC-style practice.">
+<title>Dasbor Mengajar Awaluddin</title>
+<meta name="description" content="Dasbor mengajar pribadi: jadwal kelas UIB dan UIS, materi General & Workplace English Foundation.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 <header class="site">
   <div class="wrap">
-    <span class="badge">A2 → B1 · TOEIC-aligned</span>
-    <h1>General &amp; Workplace English Foundation</h1>
-    <p>Universitas Internasional Batam · Lecturer: Awaluddin, S.Pd., M.Pd.</p>
+    <span class="badge">Semester Ganjil 2026/2027</span>
+    <h1>Dasbor Mengajar</h1>
+    <p id="today-line">Awaluddin, S.Pd., M.Pd. · UIB &amp; UIS</p>
   </div>
 </header>
 
 <main class="wrap">
-  <h2>In class</h2>
-  <div class="card">
-    <ul class="clean">
-      <li>Open the meeting and project it to review the <strong>language focus</strong>.</li>
-      <li>Run the <strong>practice</strong> together: the class calls out an answer, you tap it, and the feedback explains the trap.</li>
-      <li>On Meetings 2 and 3, <strong>Listening mode</strong> hides the question and reads it aloud, like the real TOEIC Part 2.</li>
-    </ul>
-  </div>
+  <section>
+    <p class="eyebrow" id="today-label">Hari ini</p>
+    <div class="today" id="today"></div>
+  </section>
 
-  <h2>Meetings</h2>
-  <ul class="meetings">
-    <li><a href="meeting-01.html"><span class="num">1</span><span><span class="title">Describing Visual Surroundings &amp; Physical Activities</span><br><span class="meta">TOEIC Part 1 · Photographs</span></span><span class="go" aria-hidden="true">›</span></a></li>
-    <li><a href="meeting-02.html"><span class="num">2</span><span><span class="title">Inquiring &amp; Giving Direct Personal Information</span><br><span class="meta">TOEIC Part 2 · Wh-questions</span></span><span class="go" aria-hidden="true">›</span></a></li>
-    <li><a href="meeting-03.html"><span class="num">3</span><span><span class="title">Handling Offers, Invitations &amp; Preferences</span><br><span class="meta">TOEIC Part 2 · Yes/No, choice &amp; tag questions</span></span><span class="go" aria-hidden="true">›</span></a></li>
-    <li class="soon"><div><span class="num">4</span><span><span class="title">Coordinating Office Logistics &amp; Schedules</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">5</span><span><span class="title">Building Accurate Workplace Sentences</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">6</span><span><span class="title">Interpreting &amp; Constructing Business Notices</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">7</span><span><span class="title">Professional Email Communication</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">8</span><span><span class="title">Navigating the Workplace</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">9</span><span><span class="title">Clarifying Reasons, Procedures &amp; Solutions</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">10</span><span><span class="title">Exchanging Information on Schedules &amp; Workplace Events</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">11</span><span><span class="title">Managing Customer Service &amp; Transactions</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">12</span><span><span class="title">Understanding Public Announcements &amp; Messages</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">13</span><span><span class="title">Project Report (Tenses)</span><br><span class="meta">Coming soon</span></span></div></li>
-    <li class="soon"><div><span class="num">14</span><span><span class="title">Finalizing Workplace Inquiries &amp; Customer Feedback</span><br><span class="meta">Coming soon</span></span></div></li>
-  </ul>
+  <section>
+    <h2>Jadwal mingguan</h2>
+    <p class="sub" style="margin-top:-6px;color:var(--muted);font-size:15px">
+      <span class="tag uib">UIB</span>Bahasa Inggris I · 3 kelas &nbsp;
+      <span class="tag uis">UIS</span>Bahasa Inggris I &amp; K3 · 8 kelas · UTS = Pertemuan 8, UAS 12–15 Jan 2027
+    </p>
+    <div class="week" id="week"></div>
+  </section>
+
+  <section>
+    <h2>General &amp; Workplace English Foundation <span class="tag uib">UIB</span></h2>
+    <p style="margin-top:-6px;color:var(--muted);font-size:15px">GBA 90 menit: BKOF 15′ · MOT 30′ · JCA 35′ · ICA 10′. Pertemuan 1–3 punya panduan lengkap.</p>
+    <ul class="syllabus" id="syllabus"></ul>
+  </section>
+
+  <section>
+    <h2>Tautan cepat</h2>
+    <div class="card">
+      <div class="links">
+        <a class="chip" href="https://drive.google.com/drive/folders/1WRc7hE4p2OFOmiMTKAGkueIkOAlQ-EJi" target="_blank" rel="noopener">Folder UIB · TOEIC &amp; Workplace English</a>
+        <a class="chip" href="https://drive.google.com/drive/folders/19buNrXGujuGSkWIZkO8Hx0L99jeWg0Wh" target="_blank" rel="noopener">Semua slide Foundation</a>
+        <a class="chip" href="https://drive.google.com/drive/folders/1HiQXaSoRsADOHfRabKzm_dRoukd2ix9q" target="_blank" rel="noopener">TOEIC Listening</a>
+        <a class="chip" href="https://drive.google.com/drive/folders/1Rbs-_N9RNq037KxLwt4qZbz95Ur0ZdE9" target="_blank" rel="noopener">TOEIC Reading</a>
+        <a class="chip" href="https://drive.google.com/drive/folders/1PQmiNB_Uv6mE_B2v7OtWA0FfnB9pEj6b" target="_blank" rel="noopener">TOEIC Tryout</a>
+        <a class="chip" href="https://drive.google.com/file/d/1kjS__hEvNf5uwLlzG4aUpKQ5-BKjK-ev/view" target="_blank" rel="noopener">TOEIC Examinee Handbook</a>
+        <a class="chip" href="https://drive.google.com/file/d/1-8Dkj3xXqXUKjciZPPDwm0-xwv0I0gLG/view" target="_blank" rel="noopener">TOEIC Final Exam Score Policy</a>
+        <a class="chip" href="https://myportal.uib.ac.id" target="_blank" rel="noopener">MyPortal UIB</a>
+        <a class="chip" href="https://siakadku.uis.ac.id" target="_blank" rel="noopener">SIAKAD UIS</a>
+      </div>
+      <p style="font-size:14px;color:var(--muted);margin:10px 0 0">File Drive terbuka dengan akun awaluddin2813@gmail.com.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site">
-  <div class="wrap">General &amp; Workplace English Foundation · Universitas Internasional Batam</div>
+  <div class="wrap">Dasbor pribadi · hanya untuk Awaluddin</div>
 </footer>
+
+<script>
+(function () {
+  // Weekly schedule. day: 1 = Senin … 5 = Jumat
+  var CLASSES = [
+    { day: 1, start: "17:15", end: "18:55", campus: "uib", code: "1TUMC", course: "Bahasa Inggris I", note: "Sistem Informasi · 36 mhs", room: "A420" },
+    { day: 1, start: "18:55", end: "20:35", campus: "uib", code: "1BAME", course: "Bahasa Inggris I", note: "Ilmu Hukum · 47 mhs", room: "R1002" },
+    { day: 2, start: "13:00", end: "14:40", campus: "uis", code: "1B.3", course: "Bahasa Inggris I", note: "", room: "F-303" },
+    { day: 2, start: "18:20", end: "20:00", campus: "uis", code: "3C.1", course: "Bahasa Inggris K3", note: "", room: "Online / belum ada ruang" },
+    { day: 2, start: "20:00", end: "21:40", campus: "uis", code: "1C.2", course: "Bahasa Inggris I", note: "", room: "Online / belum ada ruang" },
+    { day: 3, start: "13:00", end: "14:30", campus: "uis", code: "1B.2", course: "Bahasa Inggris I", note: "", room: "F-302" },
+    { day: 3, start: "18:55", end: "20:35", campus: "uib", code: "1TUMM", course: "Bahasa Inggris I", note: "Manajemen · 35 mhs", room: "B510" },
+    { day: 4, start: "10:00", end: "11:40", campus: "uis", code: "1B.1", course: "Bahasa Inggris I", note: "", room: "F-301" },
+    { day: 4, start: "13:00", end: "14:40", campus: "uis", code: "3B.1", course: "Bahasa Inggris K3", note: "", room: "D1-303" },
+    { day: 4, start: "18:20", end: "20:00", campus: "uis", code: "3C.3", course: "Bahasa Inggris K3", note: "", room: "Online / belum ada ruang" },
+    { day: 5, start: "13:00", end: "14:40", campus: "uis", code: "1B.4", course: "Bahasa Inggris I", note: "", room: "D402" }
+  ];
+  var DAYS = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  var MONTHS = ["Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember"];
+
+  // Current time in Asia/Jakarta, regardless of device timezone
+  function jakartaNow() {
+    var parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Jakarta", weekday: "short", year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+    var o = {}; parts.forEach(function (p) { o[p.type] = p.value; });
+    var wd = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[o.weekday];
+    return { day: wd, date: +o.day, month: +o.month - 1, year: +o.year, minutes: (+o.hour % 24) * 60 + (+o.minute) };
+  }
+  function mins(t) { var a = t.split(":"); return +a[0] * 60 + +a[1]; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function tag(c) { return '<span class="tag ' + c.campus + '">' + c.campus.toUpperCase() + "</span>"; }
+
+  var now = jakartaNow();
+  document.getElementById("today-line").textContent =
+    DAYS[now.day] + ", " + now.date + " " + MONTHS[now.month] + " " + now.year + " · UIB & UIS";
+
+  // Today / next class
+  var todayBox = document.getElementById("today");
+  var todays = CLASSES.filter(function (c) { return c.day === now.day; });
+  var label = document.getElementById("today-label");
+  if (todays.length) {
+    label.textContent = "Hari ini · " + todays.length + " kelas";
+    todayBox.innerHTML = todays.map(function (c) {
+      var live = now.minutes >= mins(c.start) && now.minutes < mins(c.end);
+      var done = now.minutes >= mins(c.end);
+      return '<div class="slot' + (live ? " now" : "") + '" style="' + (done ? "opacity:.6" : "") + '">' +
+        '<div class="time">' + c.start + "–" + c.end + (live ? '<div class="sub">Sedang berlangsung</div>' : done ? '<div class="sub">Selesai</div>' : "") + "</div>" +
+        '<div><div class="cls">' + tag(c) + esc(c.code) + " · " + esc(c.course) + "</div>" +
+        '<div class="sub">Ruang ' + esc(c.room) + (c.note ? " · " + esc(c.note) : "") + "</div></div></div>";
+    }).join("");
+  } else {
+    var next = null;
+    for (var i = 1; i <= 7 && !next; i++) {
+      var d = (now.day + i) % 7;
+      var list = CLASSES.filter(function (c) { return c.day === d; });
+      if (list.length) next = { day: d, c: list[0] };
+    }
+    label.textContent = "Hari ini";
+    todayBox.innerHTML = '<div class="empty">Tidak ada kelas hari ini.' +
+      (next ? " Kelas berikutnya: <strong>" + DAYS[next.day] + " " + next.c.start + "</strong>, " + esc(next.c.code) + " (" + next.c.campus.toUpperCase() + ")." : "") + "</div>";
+  }
+
+  // Week grid
+  var week = document.getElementById("week");
+  week.innerHTML = [1, 2, 3, 4, 5].map(function (d) {
+    var list = CLASSES.filter(function (c) { return c.day === d; });
+    return '<div class="day' + (d === now.day ? " is-today" : "") + '"><h3>' + DAYS[d] + (d === now.day ? "<small>HARI INI</small>" : "") + "</h3><ul>" +
+      list.map(function (c) {
+        return '<li><span class="t">' + c.start + "–" + c.end + " · " + esc(c.room) + "</span>" + tag(c) + esc(c.code) + " · " + esc(c.course) + "</li>";
+      }).join("") + "</ul></div>";
+  }).join("");
+
+  // Syllabus: General & Workplace English Foundation
+  var D = function (id) { return "https://drive.google.com/file/d/" + id + "/view"; };
+  var MEETINGS = [
+    { t: "Describing Visual Surroundings & Physical Activities", m: "TOEIC Part 1 · Photographs", page: "meeting-01.html", files: [["Slide", D("1mqGAIyrj0LFOnI_ihthQfXm1WMHWbnEC")]] },
+    { t: "Inquiring & Giving Direct Personal Information", m: "TOEIC Part 2 · Wh-questions", page: "meeting-02.html", files: [["Slide", D("1rCFzEn55rBjB3hnCxZvXZi2WPw5mV6Zj")]] },
+    { t: "Handling Offers, Invitations & Preferences", m: "TOEIC Part 2 · Yes/No, choice & tag", page: "meeting-03.html", files: [["Slide", D("1ETu5dCL7Ve3QBhrZ8AGrezmGyTgdnOK5")]] },
+    { t: "Coordinating Office Logistics & Schedules", m: "Versi redesign", files: [["Slide", D("1O3Ize5XM1KNJ49G_xYhrGUC-VgOgUb7O")], ["Lesson plan", D("1qE5e1-Sev_BXpIhwA4dLmUTzR7A_2UtO")], ["Kunci jawaban", D("1diktkSlCYZrzWvBn_Rzdh4IlCG8fnEvv")]] },
+    { t: "Building Accurate Workplace Sentences", m: "Versi redesign", files: [["Slide", D("1bItxUEEyQCaN0Mkq3GxJHZQju6eWHmrP")], ["Lesson plan", D("1DrTpbF7U5RTfJKJmp735J2SGrak0f-BP")], ["Kunci jawaban", "https://docs.google.com/document/d/1r4e_HiTKsPfqSS-QkH9_-X4swIASZkdI4qIilkEeFP4/edit"]] },
+    { t: "Interpreting & Constructing Business Notices", files: [["Slide", D("1CT8-NBzegMyXxO9r9dtVVQvfd0uhwVsr")]] },
+    { t: "Professional Email Communication", files: [["Slide", D("188rSgBFyrZ03OLc259AN8J7daG0lF4Ad")]] },
+    { t: "Navigating the Workplace", files: [["Slide", D("1TbhwUjci0cRiSMdHHtVwo2RzprRjiTIC")]] },
+    { t: "Clarifying Reasons, Procedures & Solutions", files: [["Slide", D("1SvpbdxrTruQEIpXTt-L9K660O-XCZnLh")]] },
+    { t: "Exchanging Information on Schedules & Workplace Events", files: [["Slide", D("1hlABeY6-4JgeRxpsuZaLaDX-NZSI4M7F")]] },
+    { t: "Managing Customer Service & Transactions", files: [["Slide", D("1b4aZKQtGZEQxjzRYJA-ceVt-y3XJJxh9")]] },
+    { t: "Understanding Public Announcements & Messages", files: [["Slide", D("1Ho7ZqMjboeWb4F6Y2yQAWyqq2TNpIPI-")]] },
+    { t: "Project Report (Tenses)", files: [["Slide", D("1m85vEtKhWSZz9Tcl3TgsiTPCY0kC8qxR")]] },
+    { t: "Finalizing Workplace Inquiries & Customer Feedback", files: [["Slide", D("1_UZD3zb_NgdR5TFxEXN4OYuXLRW4Iyx_")]] }
+  ];
+  document.getElementById("syllabus").innerHTML = MEETINGS.map(function (x, i) {
+    var chips = (x.page ? '<a class="chip primary" href="' + x.page + '">Panduan mengajar</a>' : "") +
+      x.files.map(function (f) { return '<a class="chip" href="' + f[1] + '" target="_blank" rel="noopener">' + esc(f[0]) + "</a>"; }).join("");
+    return '<li class="' + (x.page ? "ready" : "") + '"><span class="num">' + (i + 1) + "</span><div>" +
+      '<div class="title">' + esc(x.t) + "</div>" + (x.m ? '<div class="meta">' + esc(x.m) + "</div>" : "") +
+      '<div class="links">' + chips + "</div></div></li>";
+  }).join("");
+})();
+</script>
 </body>
 </html>
